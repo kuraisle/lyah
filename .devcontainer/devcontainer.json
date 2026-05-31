@@ -1,0 +1,29 @@
+{
+	"name": "Haskell",
+	"image": "haskell:9.8",
+	
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"haskell.haskell",
+				"justusadam.language-haskell",
+				"dramforever.vscode-ghc-simple",
+				"visortelle.haskell-spotlight",
+				"arturadib.Haskell-Formatter"
+			],
+			"settings": {
+				"haskell.manageHLS": "GHCup",
+				"haskell.checkParentDirectories": false
+			}
+		}
+	},
+
+	"postCreateCommand": "ghcup install cabal latest && ghcup install stack latest",
+	
+	"remoteUser": "root"
+}
